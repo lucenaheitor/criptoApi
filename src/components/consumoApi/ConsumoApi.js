@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../consumoApi/api.css'
 
+function formatNumber(number) {
+  return Number(number).toLocaleString('pt-BR', {
+    maximumFractionDigits: 10
+  });
+}
+
 function ConsumoApi() {
   const [dataAPI, setDataAPI] = useState([]);
 
@@ -24,10 +30,22 @@ function ConsumoApi() {
 
   return (
     <div>
-      <h1> Moedas</h1>
+      <div className='api-info'>
+           <p>Criptomoeda:</p>
+           <p>Preço$</p>
+           <p>Limite de mercado:</p>
+           <p>24H:</p>
+      </div>
+         
+
       <div className="api-container">
         {dataAPI.map((coin) => (
-          <p key={coin.id}>{coin.name} ({coin.symbol}): {coin.marketCap}</p>
+         <div key={coin.id}>
+              <p>{coin.name}</p>
+              <p style={{ textAlign: 'center' }}>{formatNumber(coin.price)}</p>
+              <p style={{ textAlign: 'right' }}>{formatNumber(coin.marketCap)}</p>
+              <p style={{ textAlign: 'right' }}>{coin.change}%</p>
+       </div>
         ))}
       </div>
     </div>
