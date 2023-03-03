@@ -3,27 +3,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 /* inicio do body e estilização da api*/
 .api-container, p{
     color: #fff;
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    
+    flex-direction: column; 
+    justify-content: space-between;  
 }
 .api-container > div {
     display: flex;
-    justify-content: space-between;
-    margin-right: 20px;
-   /* border: 1px  solid #fff*/;
+    border: 1px solid #fff;
 }
   
 .api-container > div > p {
     flex: 1;
-    margin-right: 1rem;
-    justify-content: space-between;
     
-   
+    
+      
 }
+
+
 
